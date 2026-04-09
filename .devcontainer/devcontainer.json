@@ -1,0 +1,16 @@
+{
+    "name": "Spark Course Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "unicode-extensions.pyspark-helper"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
+}
