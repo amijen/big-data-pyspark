@@ -1,0 +1,23 @@
+# Environnement virtuel Python
+.venv/
+venv/
+env/
+
+# Données traitées (regenerees par Spark)
+data/processed/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environnement virtuel Claude Code (interne)
+.claude/
