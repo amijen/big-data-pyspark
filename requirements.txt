@@ -13,5 +13,10 @@ pyspark==3.5.1
 scikit-learn==1.4.1.post1
 numpy==1.26.4
 
+# Visualisation
+matplotlib>=3.8
+seaborn>=0.13
+
 # Utilitaires
 python-dotenv==1.0.1
+tqdm>=4.66
