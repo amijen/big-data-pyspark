@@ -1,6 +1,6 @@
-# Big Data — Marché de l'emploi tech en France
+# Big Data — Marché de l'emploi tech aux USA
 
-Pipeline Big Data end-to-end : collecte d'offres d'emploi, traitement Spark, prédiction de salaire.
+Pipeline Big Data end-to-end : collecte d'offres d'emploi Data/IA aux États-Unis, traitement Spark, et prédiction de salaire.
 
 ---
 
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 > Ou utiliser le devcontainer (`.devcontainer/`) sous VS Code.
 
-### 2. Scraping
+### 2. Scraping (optionnel — les données sont déjà incluses)
 
 ```bash
 python scraping/collect.py
@@ -42,9 +42,9 @@ python scraping/collect.py
 
 Génère `data/raw/jobs_<timestamp>.json` et `data/raw/jobs_<timestamp>.csv`.
 
-> Configurer les clés API dans un fichier `.env` à la racine.
+> Nécessite un fichier `.env` avec les clés Adzuna (voir `.env.example`). Pas nécessaire si vous utilisez les données déjà fournies.
 
-### 3. Traitement Spark
+### 3. Traitement Spark (optionnel — les parquets sont déjà inclus)
 
 Ouvrir et exécuter **`spark/analysis.ipynb`** dans l'ordre des cellules.
 
@@ -52,7 +52,7 @@ Ouvrir et exécuter **`spark/analysis.ipynb`** dans l'ordre des cellules.
 - Nettoie, normalise, impute les valeurs manquantes (règles + LLM HuggingFace)
 - Exporte `spark/final.parquet` et `spark/to_predict.parquet`
 
-> Variable d'environnement requise : `HF_TOKEN` (token HuggingFace pour l'imputation LLM)
+> Le token HuggingFace (Mistral-7B) est inclus dans le notebook — aucune configuration requise.
 
 ### 4. Analyse NLP
 
@@ -78,7 +78,7 @@ projet_big_data/
 ├── scraping/
 │   └── collect.py              # Étape 1 : collecte (JobSpy)
 ├── data/
-│   └── raw/                    # JSON + CSV bruts (gitignored)
+│   └── raw/                    # JSON + CSV bruts (inclus dans le repo)
 ├── spark/
 │   ├── analysis.ipynb          # Étape 2 : nettoyage Spark
 │   ├── nlp_analysis.ipynb      # Étape 3 : NLP / MapReduce
