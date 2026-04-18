@@ -8,5 +8,6 @@ RUN apt-get update && apt-get install -y default-jdk-headless \
 ENV JAVA_HOME=/usr/lib/jvm/default-java
 ENV PATH=$PATH:$JAVA_HOME/bin
 
-# Installation de PySpark et des outils nécessaires
-RUN pip install --no-cache-dir pyspark findspark pandas matplotlib
+# Installation des dépendances du projet
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
