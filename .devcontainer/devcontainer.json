@@ -1,7 +1,8 @@
 {
-    "name": "Spark Course Environment",
+    "name": "Big Data - Emploi Tech",
     "build": {
-        "dockerfile": "Dockerfile"
+        "context": "..",
+        "dockerfile": ".devcontainer/Dockerfile"
     },
     "customizations": {
         "vscode": {
