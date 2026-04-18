@@ -3,6 +3,9 @@
 venv/
 env/
 
+# Variables d'environnement (clés API)
+.env
+
 # Données traitées (regenerees par Spark)
 data/processed/
 
